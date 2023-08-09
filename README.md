@@ -51,6 +51,8 @@ select case when pg_is_in_recovery() then 'REPLICA' else 'MASTER' end;
 select count(*) from pg_stat_replication;
 ```
 
+![img](img/1-1.PNG)
+
 ### Проверьте работоспособность репликации в кластере
 
 * Создайте таблицу и вставьте одну-две строки.
@@ -60,6 +62,8 @@ CREATE TABLE test_table(text varchar);
 ```
 insert into test_table values('Строка 1');
 ```
+
+![img](img/1-2.PNG)
 
 * Выйдите из psql командой ```\q```.
 
@@ -80,6 +84,9 @@ select * from test_table;
 ```
 
 *В качестве результата вашей работы пришлите скриншоты:*
+
+
+![img](img/1-3.PNG)
 
 *1) Созданной базы данных;*
 *2) Результата вывода команды на реплике ```select * from test_table;```.*
